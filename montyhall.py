@@ -7,8 +7,9 @@ random.seed(3)
 doors = [["car"],["goat"],["goat"]]
 doornb = [1,2,3]
 
-nbsim = 100000
+nbsim = 1000
 
+nbgameshow = []
 DoorPos1 = []
 DoorPos2 = []
 DoorPos3 = []
@@ -24,6 +25,8 @@ for i in range(nbsim):
     DoorPos2.append(gamedoors[1])
     DoorPos3.append(gamedoors[2])
 
+    nbgameshow.append(i+1)
+    
     choice.append(doornb[numpy.sum(pickdoor)])
 
     tmpop = []
@@ -41,7 +44,8 @@ for i in range(nbsim):
     newdoor.append(doornb[numpy.sum(tmpnewc)])
     win.append(gamedoors[numpy.sum(tmpnewc)])
 
-montyhall = {"DoorPos.1": DoorPos1,
+montyhall = {"Gameshow":nbgameshow,
+             "DoorPos.1": DoorPos1,
              "DoorPos.2": DoorPos2,
              "DoorPos.3": DoorPos3,
              "Chioce": choice,
@@ -50,10 +54,23 @@ montyhall = {"DoorPos.1": DoorPos1,
              "Win": win}
 
 dfmontyhall = pandas.DataFrame(montyhall,
-                               columns = ["DoorPos.1","DoorPos.2","DoorPos.3",
+                               columns = ["Gameshow",
+                                          "DoorPos.1","DoorPos.2","DoorPos.3",
                                           "Chioce","DoorOpen","DoorNew","Win"])
 
+print("     _     _  ___  __    _ _______ _     _ _    _     __     _      _      ")
+print("    | \  /  |/ _ \|   \ | |__   __| \   / | |  | |   /  \   | |    | |     ")
+print("    |  \/   | / \ | |\ \| |  | |   \ \_/ /| |__| |  / /\ \  | |    | |     ")
+print("    | |\_/| ||   || | \ | |  | |    \   / |  __  | / /__\ \ | |    | |     ")
+print("    | |   | | \_/ | |  \  |  | |     | |  | |  | |/ ______ \| |____| |____ ")
+print("    |_|   |_|\___/|_|   \_|  |_|     |_|  |_|  |_|_/      \_|______|______|")
+print("                                  SIMULATION                               ")
 
+
+
+print("")
+print(dfmontyhall[dfmontyhall["Gameshow"] <= 10])
+print("")
 print("The door that has been chosen at first")
 print(dfmontyhall["Chioce"].value_counts()/nbsim)
 print("")
