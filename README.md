@@ -20,3 +20,11 @@ It list helpful functions
 
 run the script analysisscript.py in Python then will the program run the
 two scripts simulatedata.py and simplefct.py.
+
+
+mac: obtain the path by write $pwd$
+use $cd$ add to the path
+$ls$ will tell what the folder contain files and subfolders
+
+write $python3.8 filename.py$ to excite the command
+ 
