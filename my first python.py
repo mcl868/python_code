@@ -22,29 +22,26 @@ print(" ")
 y = numpy.arange(1,11+1)
 x = numpy.arange(1,11+1)
 print(y)
-print(np.sum(y,axis=0)) 
+print(np.sum(y,axis=0))
 
 
-plt.plot(x, y, color = "g") 
-  
-# putting labels 
-plt.xlabel('x') 
-plt.ylabel('y') 
-  
-  # function to show plot 
-plt.show() 
-plt.close() 
+plt.plot(x, y, color = "g")
 
+# putting labels
+plt.xlabel('x')
+plt.ylabel('y')
 
-
+  # function to show plot
+plt.show()
+plt.close()
 
 
 
 
+import seaborn
 
-
-
-
+#p = seaborn.distplot(dist_estimates,kde=False,rug=True).get_figure()
+#p.savefig('t.png')
 
 
 
@@ -59,9 +56,15 @@ plt.close()
 
 
 
-#print("Estimated coefficients:\nb_0 = {}  \ 
-#          \nb_1 = {}".format(b[0], b[1])) 
-  
+
+
+
+
+
+
+#print("Estimated coefficients:\nb_0 = {}  \
+#          \nb_1 = {}".format(b[0], b[1]))
+
 #import sys
 #sys.path.append("")
 
@@ -83,56 +86,56 @@ print(suma())
 
 #A = np.array([[2, 0], [0, 5]])
 #b = np.array([[8],[1]])
-#x = np.array([[1, 2], [4, 5]]) 
-#y = np.array([[7, 8], [9, 10]]) 
+#x = np.array([[1, 2], [4, 5]])
+#y = np.array([[7, 8], [9, 10]])
 
 #print(x)
 #print(y)
 # using add() to add matrices
-#print("The element wise addition of matrix is : ") 
-#print(np.add(x,y)) 
-  
-# using subtract() to subtract matrices 
-#print("The element wise subtraction of matrix is : ") 
-#print(np.subtract(x,y)) 
-  
-# using divide() to divide matrices 
-#print("The element wise division of matrix is : ") 
-#print(np.divide(x,y)) 
-#print(np.linalg.inv(x)) 
+#print("The element wise addition of matrix is : ")
+#print(np.add(x,y))
 
-# using multiply() to multiply matrices element wise 
-#print("The element wise multiplication of matrix is : ") 
+# using subtract() to subtract matrices
+#print("The element wise subtraction of matrix is : ")
+#print(np.subtract(x,y))
+
+# using divide() to divide matrices
+#print("The element wise division of matrix is : ")
+#print(np.divide(x,y))
+#print(np.linalg.inv(x))
+
+# using multiply() to multiply matrices element wise
+#print("The element wise multiplication of matrix is : ")
 #print(np.multiply(x,y))
 
 #print(A)
 #print(b)
-#print(np.multiply(A,b)) 
+#print(np.multiply(A,b))
 
-#print(np.multiply(np.linalg.inv(A),np.multiply(A,b))) 
+#print(np.multiply(np.linalg.inv(A),np.multiply(A,b)))
 
-#print(np.multiply(np.linalg.inv(x),x)) 
+#print(np.multiply(np.linalg.inv(x),x))
 
-  
-# using dot() to multiply matrices 
-#print("The product of matrices is : ") 
-#print(np.dot(x,y)) 
 
-# using sqrt() to print the square root of matrix 
-#print("The element wise square root is : ") 
-#print(np.sqrt(x)) 
-  
-# using sum() to print summation of all elements of matrix 
-#print("The summation of all matrix element is : ") 
-#print(np.sum(y)) 
+# using dot() to multiply matrices
+#print("The product of matrices is : ")
+#print(np.dot(x,y))
 
-# using sum(axis=1) to print summation of all columns of matrix 
-#print("The row wise summation of all matrix  is : ") 
-#print(np.sum(y,axis=1)) 
-  
-# using "T" to transpose the matrix 
-#print("The transpose of given matrix is : ") 
-#print(x.T) 
+# using sqrt() to print the square root of matrix
+#print("The element wise square root is : ")
+#print(np.sqrt(x))
+
+# using sum() to print summation of all elements of matrix
+#print("The summation of all matrix element is : ")
+#print(np.sum(y))
+
+# using sum(axis=1) to print summation of all columns of matrix
+#print("The row wise summation of all matrix  is : ")
+#print(np.sum(y,axis=1))
+
+# using "T" to transpose the matrix
+#print("The transpose of given matrix is : ")
+#print(x.T)
 
 # Fibonacci series:
 # the sum of two elements defines the next
@@ -431,7 +434,7 @@ varRes = numpy.var(residual)
 print(varRes)
 sortResnorm = sorted(residual/varRes)
 
-x = numpy.array([[1, 2], [4, 5]]) 
+x = numpy.array([[1, 2], [4, 5]])
 y = numpy.array([[7, 8], [9, 10]])
 print(x)
 print(y)
@@ -472,10 +475,10 @@ numpy.fill_diagonal(Avar, varRes)
 
 #plt.plot(dfsimpleData["X1"],sortResnorm, color = "g")
 # plt.scatter(sim, dfsimpleData["Y"], color = "m", marker = "o", s = 30)
-# putting labels 
-#plt.xlabel('X1') 
-#plt.ylabel('Y') 
-#plt.show() 
+# putting labels
+#plt.xlabel('X1')
+#plt.ylabel('Y')
+#plt.show()
 
 #print(numpy.pi)
 #print(numpy.sqrt(numpy.pi))
@@ -485,7 +488,3 @@ numpy.fill_diagonal(Avar, varRes)
 #    return densityv
 #
 #print(normaldensity(0,0,1))
-
-
-
-
