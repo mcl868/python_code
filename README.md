@@ -24,7 +24,14 @@ two scripts simulatedata.py and simplefct.py.
 
 mac: obtain the path by write $pwd$
 use $cd$ add to the path
-$ls$ will tell what the folder contain files and subfolders
+use $ls$ will tell what the folder contain files and subfolders
 
 write $python3.8 filename.py$ to excite the command
- 
+
+
+
+pc:
+use $cd$ to change the path
+use $dir$ will tell what the folder contain files and subfolders
+
+write $python filename.py$ to excite the command
