@@ -4,26 +4,27 @@ import numpy
 
 
 def checkfeild(a):
-    numbers = [1,2,3,4,5,6,7,8,9]
+    numbers = numpy.arange(1,len(a)+1)
     s = []
-    for i in range(9):
+    for i in range(len(a)):
         if numbers[i] not in a:
             s.append(numbers[i])
     return s
 
 def feild(a):
-    numbers = [1,2,3,4,5,6,7,8,9]
+    numbers = numpy.arange(1,len(a)+1)
     place = []
-    for i in range(9):
+    for i in range(len(a)):
         if a[i] == 0:
             place.append(i)
     return place
 
 
 def checkall(x):
-    numbers = numpy.array([1,2,3,4,5,6,7,8,9])
+    vec = numpy.array(x).reshape(-1)
+    numbers = numpy.arange(1,len(vec)+1)
 
-    res = all(numbers == numpy.array(sorted(numpy.array(x).reshape(-1))))
+    res = all(numbers == numpy.array(sorted(vec)))
     return res
 
                 
@@ -105,13 +106,6 @@ print("")
 print("")
 
 
-mab=makeboard()
-
-print(board(mab))
-print(solvesoduku(mab))
-
-
-'''
 
 
 
@@ -119,7 +113,7 @@ print(solvesoduku(mab))
 line1 = [5,3,4,6,7,8,9,1,2]
 line2 = [6,7,2,1,9,5,3,4,8]
 line3 = [0,9,8,3,4,2,5,6,7]
-line4 = [8,5,9,7,6,1,4,2,3]
+line4 = [8,5,9,0,6,1,4,2,3]
 line5 = [4,2,6,8,5,3,7,9,1]
 line6 = [7,1,3,9,2,0,8,5,6]
 line7 = [9,6,1,0,3,7,2,8,4]
@@ -127,7 +121,16 @@ line8 = [2,8,7,4,1,9,6,3,5]
 line9 = [3,4,5,2,8,6,1,7,9]
 
 
+mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
+print(board(mab))
+print(solvesoduku(mab))
 
+'''
+
+mab=makeboard()
+
+print(board(mab))
+print(solvesoduku(mab))
 
 
 
