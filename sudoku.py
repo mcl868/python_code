@@ -23,13 +23,13 @@ def feild(a):
 def checkall(x):
     vec = numpy.array(x).reshape(-1)
     numbers = numpy.arange(1,len(vec)+1)
- 
+
     res = all(numbers == numpy.array(sorted(vec)))
     return res
 
 
 
-                
+
 def board(x):
     for j in range(9):
        if j == 0:
@@ -51,11 +51,11 @@ def solvesoduku(x):
         aav2 = []
         for j in range(9):
             row = aa[j]
-    
+
             aaaaaa = random.sample(checkfeild(row),len(checkfeild(row)))
-        
+
             f = numpy.array(feild(row))
-    
+
             for i in range(len(checkfeild(row))):
                 row[f[i]] = aaaaaa[i]
 
@@ -124,6 +124,7 @@ line9 = [3,4,5,2,8,6,1,7,9]
 
 
 mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
+<<<<<<< HEAD
 
 board(mab)
 print("")
@@ -132,6 +133,11 @@ solvesoduku(mab)
 
 
 
+=======
+board(mab)
+print("... and the solution is:")
+solvesoduku(mab)
+>>>>>>> 5911502f71efab2cfb1b8a03b51102a5135b2ca5
 
 '''
 
@@ -151,11 +157,11 @@ while solved:
     aav2 = []
     for j in range(9):
         row = aa[j]
-    
+
         aaaaaa = random.sample(checkfeild(row),len(checkfeild(row)))
-            
+
         f = numpy.array(feild(row))
-    
+
         for i in range(len(checkfeild(row))):
             row[f[i]] = aaaaaa[i]
 
@@ -182,4 +188,3 @@ while solved:
            checkall(aav3[0:9,8])))
 
 '''
-
