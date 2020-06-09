@@ -23,22 +23,24 @@ def feild(a):
 def checkall(x):
     vec = numpy.array(x).reshape(-1)
     numbers = numpy.arange(1,len(vec)+1)
-
+ 
     res = all(numbers == numpy.array(sorted(vec)))
     return res
+
+
 
                 
 def board(x):
     for j in range(9):
        if j == 0:
-           print("                  _____________ _____________ _____________")
+           print("                    ___________ ___________ ___________")
        if j in numpy.array([3,6,9]):
-           print("                 |_____________|_____________|_____________|")
-       print("                 |             |             |             |")
-       print("                 | ",x[j,0]," ",x[j,1]," ",x[j,2],
-             " | ",x[j,3]," ",x[j,4]," ",x[j,5],
-             " | ",x[j,6]," ",x[j,7]," ",x[j,8]," | ")
-    print("                 |_____________|_____________|_____________|")
+           print("                   |___________|___________|___________|")
+       print("                   |           |           |           |")
+       print("                   |  {0}  {1}  {2}  |  {3}  {4}  {5}  |  {6}  {7}  {8}  |".
+             format(x[j,0],x[j,1],x[j,2],x[j,3],x[j,4],x[j,5],x[j,6],x[j,7],x[j,8]))
+
+    print("                   |___________|___________|___________|")
 
 def solvesoduku(x):
     b=0
@@ -122,10 +124,17 @@ line9 = [3,4,5,2,8,6,1,7,9]
 
 
 mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
-print(board(mab))
-print(solvesoduku(mab))
+
+board(mab)
+print("")
+print("... and the solution is:")
+solvesoduku(mab)
+
+
+
 
 '''
+
 
 mab=makeboard()
 
