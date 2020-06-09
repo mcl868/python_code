@@ -124,20 +124,12 @@ line9 = [3,4,5,2,8,6,1,7,9]
 
 
 mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
-<<<<<<< HEAD
 
 board(mab)
 print("")
 print("... and the solution is:")
 solvesoduku(mab)
 
-
-
-=======
-board(mab)
-print("... and the solution is:")
-solvesoduku(mab)
->>>>>>> 5911502f71efab2cfb1b8a03b51102a5135b2ca5
 
 '''
 
