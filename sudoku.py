@@ -3,11 +3,21 @@ import numpy
 
 
 
-def checkfeild(a):
+def checkrow(a):
     numbers = numpy.arange(1,len(a)+1)
     s = []
     for i in range(len(a)):
         if numbers[i] not in a:
+            s.append(numbers[i])
+    return s
+
+def checkfeild(x):
+    vec = numpy.array(x).reshape(-1)
+    numbers = numpy.arange(1,len(vec)+1)
+
+    s = []
+    for i in range(len(vec)):
+        if numbers[i] not in vec:
             s.append(numbers[i])
     return s
 
@@ -42,6 +52,32 @@ def board(x):
 
     print("                   |___________|___________|___________|")
 
+
+
+line1 = [0,0,4,6,7,8,9,0,2]
+line2 = [6,7,2,1,9,5,3,4,0]
+line3 = [1,9,8,3,4,2,5,6,7]
+line4 = [8,5,9,0,6,1,4,2,3]
+line5 = [4,0,6,8,5,3,7,9,1]
+line6 = [7,1,3,9,2,0,8,5,6]
+line7 = [9,6,1,0,3,7,2,8,4]
+line8 = [2,8,0,4,1,9,6,3,5]
+line9 = [0,4,5,2,8,6,1,7,9]
+
+
+mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
+
+board(mab)
+
+print(checkrow(line1))
+
+print(checkfeild(mab[0:3,0:3]))
+
+
+print(all(checkfeild(mab[0:3,0:3]) in checkrow(line1)))
+
+
+
 def solvesoduku(x):
     b=0
     solved = True
@@ -52,11 +88,11 @@ def solvesoduku(x):
         for j in range(9):
             row = aa[j]
 
-            aaaaaa = random.sample(checkfeild(row),len(checkfeild(row)))
+            aaaaaa = random.sample(checkrow(row),len(checkrow(row)))
 
             f = numpy.array(feild(row))
 
-            for i in range(len(checkfeild(row))):
+            for i in range(len(checkrow(row))):
                 row[f[i]] = aaaaaa[i]
 
             aav2.append(row)
@@ -112,15 +148,15 @@ print("")
 
 
 
-line1 = [5,3,4,6,7,8,9,1,2]
-line2 = [6,7,2,1,9,5,3,4,8]
+line1 = [5,3,4,6,7,8,9,1,0]
+line2 = [6,7,2,1,9,5,3,4,0]
 line3 = [0,9,8,3,4,2,5,6,7]
 line4 = [8,5,9,0,6,1,4,2,3]
-line5 = [4,2,6,8,5,3,7,9,1]
+line5 = [4,0,6,8,5,3,7,9,1]
 line6 = [7,1,3,9,2,0,8,5,6]
 line7 = [9,6,1,0,3,7,2,8,4]
-line8 = [2,8,7,4,1,9,6,3,5]
-line9 = [3,4,5,2,8,6,1,7,9]
+line8 = [2,8,0,4,1,9,6,3,5]
+line9 = [0,4,5,2,8,6,1,7,9]
 
 
 mab = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
@@ -132,7 +168,6 @@ solvesoduku(mab)
 
 
 '''
-
 
 mab=makeboard()
 
@@ -150,11 +185,11 @@ while solved:
     for j in range(9):
         row = aa[j]
 
-        aaaaaa = random.sample(checkfeild(row),len(checkfeild(row)))
+        aaaaaa = random.sample(checkrow(row),len(checkrow(row)))
 
         f = numpy.array(feild(row))
 
-        for i in range(len(checkfeild(row))):
+        for i in range(len(checkrow(row))):
             row[f[i]] = aaaaaa[i]
 
         aav2.append(row)
