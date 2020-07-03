@@ -43,6 +43,14 @@ def board3(x):
              format(x[j,0],x[j,1],x[j,2],x[j,3],x[j,4],x[j,5],x[j,6],x[j,7],x[j,8]))
     print("                   |___________|___________|___________|")
 
+def board(x):
+    dimx = numpy.array(x.shape)[0]
+    if int(numpy.sqrt(dimx)) in numpy.array([2,3]):
+        boardlook = eval("board"+str(int(numpy.sqrt(dimx)))+"(x)")
+    else:
+        boardlook = []
+    return boardlook
+
 def makeboard(a):
     my_my_list = []
     for l in range(a):
@@ -53,7 +61,6 @@ def makeboard(a):
 def solvesoduku(x, itera=300):
     solved = True
     dimx = numpy.array(x.shape)[0]
-
     aa = x
     b = 0
     while solved:
@@ -77,8 +84,7 @@ def solvesoduku(x, itera=300):
     if b<itera:       
         print("")
         print("... and the solution is:")
-    rules=eval("board"+str(int(numpy.sqrt(dimx)))+"(aa)")
-    return rules
+    return board(aa)
 
 def playsoduku(a=9):
     print("")
@@ -122,7 +128,7 @@ line9 = [0,0,0,0,8,0,0,7,9]
 
 mab3 = numpy.array([line1,line2,line3,line4,line5,line6,line7,line8,line9])
 
-board3(mab3)
+board(mab3)
 
 solvesoduku(mab3)
 
@@ -135,7 +141,6 @@ line4 = [0,1,0,0]
 
 mab2 = numpy.array([line1,line2,line3,line4])
 
-board2(mab2)
+board(mab2)
 
 solvesoduku(mab2)
-
