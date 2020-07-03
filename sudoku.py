@@ -95,12 +95,7 @@ def solvesoduku(x, itera=300):
     if b<itera:       
         print("")
         print("... and the solution is:")
-
-    if numpy.sqrt(dimx) == 3:
-        rules = board3(aa)
-    if numpy.sqrt(dimx) == 2:
-        rules = board2(aa)
-
+    rules=eval("board"+str(int(numpy.sqrt(dimx)))+"(aa)")
     return rules
 
 def playsoduku(a=9):
@@ -130,7 +125,7 @@ line7 = [0 6 0 0 0 0 2 8 0]
 line8 = [0 0 0 4 1 9 0 0 5]
 line9 = [0 0 0 0 8 0 0 7 9]
 
-
+'''
 
 line1 = [5,3,0,0,7,0,0,0,0]
 line2 = [6,0,0,1,9,5,0,0,0]
@@ -151,14 +146,14 @@ solvesoduku(mab3)
 
 
 
-line1 = [0,2,3,4]
+line1 = [0,2,0,4]
 line2 = [3,4,2,0]
 line3 = [4,0,1,2]
-line4 = [0,1,0,3]
+line4 = [0,1,0,0]
 
 mab2 = numpy.array([line1,line2,line3,line4])
 
 board2(mab2)
 
 solvesoduku(mab2)
-'''
+
