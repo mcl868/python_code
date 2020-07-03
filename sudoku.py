@@ -9,24 +9,6 @@ def check(a):
             s.append(numbers[i])
     return s
 
-#############################################
-##def checkfeild(x):                       ##
-##    vec = numpy.array(x).reshape(-1)     ##
-##    numbers = numpy.arange(1,len(vec)+1) ##
-##    s = []                               ##
-##    for i in range(len(vec)):            ##
-##        if numbers[i] not in vec:        ##
-##            s.append(numbers[i])         ##
-##    return s                             ##
-##def feild(a):                            ##
-##    numbers = numpy.arange(1,len(a)+1)   ##
-##    place = []                           ##
-##    for i in range(len(a)):              ##
-##        if a[i] == 0:                    ##
-##            place.append(i)              ##
-##    return place                         ##
-#############################################
-
 def checkall(x):
     vec = numpy.array(x).reshape(-1)
     numbers = numpy.arange(1,len(vec)+1)
