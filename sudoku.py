@@ -134,10 +134,10 @@ solvesoduku(mab3)
 
 
 
-line1 = [0,2,0,4]
-line2 = [3,4,2,0]
-line3 = [4,0,1,2]
-line4 = [0,1,0,0]
+line1 = [1,0,0,0]
+line2 = [0,4,2,0]
+line3 = [4,0,0,0]
+line4 = [0,0,0,3]
 
 mab2 = numpy.array([line1,line2,line3,line4])
 
